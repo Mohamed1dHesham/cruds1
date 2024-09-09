@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CRUDS</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header id="header">
+            <h1 class="header">CRUDS</h1>
+        </header>
+        <div class="cruds">
+            <div class="input-group">
+                <div class="input-group1"> 
+                        <label class="searchlabel" onclick="searchClick()" id="searchlabel">Search</label>
+                    <div class="titlediv" id="titleDiv">
+                        <label for="titleInput">Title</label>
+                        <input onkeyup="ifSearch()" id="titleInput" type="text"/>
+                    </div>
+                    <div id="pricesDiv">
+                        <div class="priceinputtotal">
+                            <div id="priceDiv">
+                                <label for="priceInput">price</label>
+                                <input onkeyup="ifPriceInput(),getTotal(),ifSearch()" type="number" id="priceInput">
+                            </div>
+                            <div id="taxesDiv">
+                                <label for="taxesInput">Taxes</label>
+                                <input onkeyup="getTotal(),ifSearch()" type="number" id="taxesInput" disabled>
+                            </div>
+                            <div id="adsDiv">
+                                <label for="adsenseInput">AdSense</label>
+                                <input onkeyup="getTotal(),ifSearch()"  type="number" id="adsenseInput" disabled>    
+                            </div>
+                            <div id="discountDiv">
+                                <label for="discountInput">Discount</label>
+                                <input onkeyup="getTotal(),ifSearch()"  type="number" id="discountInput" disabled>
+                            </div>
+                        </div>
+                        <small id="total"></small>
+                    </div>
+                    <div id="countDiv">
+                        <label for="countInput">Count</label>
+                        <input type="number" id="countInput" max=100 maxlength=3 placeholder="MAX =100" />
+                    </div>
+                    <div id="catDiv">                
+                        <label for="categoryInput">Category</label>
+                        <input type="text" id="categoryInput" />
+                    </div>
+                    <span id="massageTitleCate"></span>
+                    <div class="createdeletebtn" id="createdeleteDiv">
+                        <button id="createBtn" class="createbtn labeltotal" >Create</button>
+                        <div id="deleteBtn"></div>
+                    </div>
+                </div>
+                    <div id="firsgroupbutton">
+                        <button id="creater" onclick="groupInput(0)"class="btnlist" style="display: none;">Create</button>
+                        <button id="updater" onclick="groupInput(1)"class="btnlist" style="display: none;">Update</button>
+                        <button id="deleter" onclick="groupInput(2)"class="btnlist" style="display: none;">Delete</button>
+                        <button id="searchr" onclick="groupInput(3)"class="btnlist" style="display: none;"> Search</button>
+                    </div>
+            </div>
+            <table class="crudstable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Taxes</th>
+                        <th>AdSense</th>
+                        <th>Discounts</th>
+                        <th>Total</th>
+                        <th>Category</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody1">
+                </tbody>
+            </table>
+        </div>
+    </div>    
+    <div id="toUp"></div>
+    <script src="script.js"></script>
+</body>
+</html>
